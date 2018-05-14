@@ -1,0 +1,179 @@
+////////////////////////////////////////////
+
+*******Database Structure******************
+CRUD State{ --(done)
+  model{
+    id,
+    name{
+      active,
+      inactive
+    }
+  }
+}
+
+CRUD userState{ --(done)
+  model{
+    id,
+    usersId,
+    stateId
+  }
+}
+
+CRUD jobState{ --(not now)
+  model{
+    id,
+    jobId,
+    stateId
+  }
+}
+
+CRUD cv{ --(not Now)
+  id,
+  skills
+}
+
+CRUD userCv{  (--not Now)
+  model{
+    id,
+    usersId,
+    cvId
+  }
+}
+
+CRUD users{  --(done)
+  model{
+    id
+    name
+    lastName
+    password
+    tel
+    email
+    direction
+
+    typeUsersId
+  }
+}
+
+CRUD typeUsers{ --(done)
+  model{
+    id
+    nameType{
+      Admin,
+      User,
+      Poster
+    }
+  }
+}
+
+CRUD Job{ --(done)
+  model{
+    id,
+    name,
+    description,
+    hour,
+    amount,
+    category,
+
+  }
+}
+
+CRUD Category{ --(done)
+  model{
+    id,
+    name
+  }
+}
+
+
+CRUD ApplyJob{  --(done)
+  model{
+    id,
+    userId,
+    jobId
+  }
+}
+
+
+///////////////////////////////////////////////////////////////////
+
+    *********************Action List**************************
+User Action
+
+Basic Action
+  -singUp(_objUser) --(done)
+  -singIn(_email, _password)  --(done)
+  -changePassword(_oldPassword, _newPassword)
+  -forgetPassword()
+
+  user applyForJob()  --(done)
+  user create CV --(done)
+  user seachJob{
+     --(byName --(done)
+
+
+        )
+  }
+
+
+Admin Action
+
+Basic Action
+  -Crud User
+  -
+
+
+Poster Action
+  -Create or Add Job
+  -Delete Own
+
+///////////////////////////////////////////////////////////////////////////////////////
+        ******necesary EndPoint******
+
+      get list users  (done)
+
+      get list users 'User'(In Progress)
+      get list users 'Poster' (In progress)
+      get list job  (done)
+      get list apply job (done)
+      get pagination job  (done)
+      get pagination job by Name (In progress)
+      get pagination job by price (In progress)
+      get job by name (done)
+      get job by category (done)
+      get list category (done)
+      get job by price (done)
+      get user by name
+      get job by id (done)
+      get token by user
+      get user by password and email (login done)
+      get state user (--not now)
+      get state job (--not now)
+
+
+      post user  (done)
+      post poster (done)
+      post jod (done)
+      post apply job (done)
+
+      post state job (-- not now)
+      post state user (-- not now)
+
+
+///////////////////////////////////////////////////
+
+
+
+
+//full time,
+//parc time
+//frelance
+
+
+admin-->
+cambiar {
+  --CRUD category,
+  --CRUD jobs
+  --Settings{
+      max post por pagina
+  }
+}
