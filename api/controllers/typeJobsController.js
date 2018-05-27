@@ -1,5 +1,5 @@
 'use strict';
-require('../models/typejobs');
+require('../models/typeJobs');
 require('../models/category');
 var mongoose = require('mongoose'),
   TypeJob = mongoose.model('typejobs');
