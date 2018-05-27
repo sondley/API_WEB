@@ -7,7 +7,7 @@ const Token= require('../models/token');
 exports.createTokenLogin = function(user){
 	console.log(user);
 	const payload = {
-		sub: user[0]._id,
+		sub: user._id,
 		iat: moment().unix(),
 		exp : moment().add(14, 'days').unix()
 
@@ -17,7 +17,7 @@ exports.createTokenLogin = function(user){
 	Token.create({
 		  text:text,
 		  tokenTypeId: 1,
-		  userId:user[0]._id,
+		  userId:user._id,
 
 	}).then(newToken => {
 		  return newToken;
@@ -28,7 +28,7 @@ exports.createTokenLogin = function(user){
 
 exports.createTokenForgetPassword = function(user){
 	const payload = {
-		sub: user[0]._id,
+		sub: user._id,
 		iat: moment().unix(),
 		exp : moment().add(2, 'days').unix()
 
@@ -38,7 +38,7 @@ exports.createTokenForgetPassword = function(user){
 	Model.Token.create({
 		text:text,
 		tokenTypeId: 2,
-		userId:user[0]._id,
+		userId:user._id,
 
 	}).then(newToken => {
 			return newToken;
