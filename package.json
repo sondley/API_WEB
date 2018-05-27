@@ -1,6 +1,5 @@
 {
   "name": "backend",
-  "name": "todolistapi",
   "version": "1.0.0",
   "description": "RESTful todoListApi",
   "main": "sever.js",
