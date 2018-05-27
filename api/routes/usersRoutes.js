@@ -10,7 +10,7 @@ module.exports = function(app) {
   app.route('/Users')
     .get(todoUsers.list_all_users);
 
-  app.route('/SingUp')
+  app.route('/SignUp')
     .post(todoUsers.create_a_user);
 
   /*app.route('/cryptoUsers/:userId')
@@ -18,7 +18,7 @@ module.exports = function(app) {
     //.put(todoUsers.update_a_user)
     .delete(todoUsers.delete_a_user);*/
 
-  app.route('/SingIn')
+  app.route('/SignIn')
     .post(todoUsers.sign_in);
 
   app.route('/readUser/:userId').get((req, res) => {
