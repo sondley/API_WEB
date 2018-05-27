@@ -12,5 +12,18 @@
     "url": "git+https:https://github.com/sondley/API_WEB.git"
   },
   "author": "Sondley Northecide",
-  "license": "ISC"
+  "license": "ISC",
+   "dependencies": {
+    "bcrypt": "^2.0.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.2.1",
+    "jwt-decode": "^2.2.0",
+    "jwt-simple": "^0.5.1",
+    "moment": "^2.22.1",
+    "mongoose": "^5.1.2",
+    "morgan": "^1.9.0",
+    "request": "^2.87.0"
+  }
 }
