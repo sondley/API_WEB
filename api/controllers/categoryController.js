@@ -68,7 +68,7 @@ exports.read_a_category = read_a_category;
 
 function getCatogoryByName(categoryName) {
   return new Promise((fnResolve, fnReject) => {
-    return Category.findOne({Category: categoryName}, function(err, category) {
+    return Category.findOne({_name: categoryName}, function(err, category) {
       if (err) {
         return fnReject(err);
       }

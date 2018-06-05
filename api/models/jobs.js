@@ -4,7 +4,6 @@ var Schema = mongoose.Schema;
 
 
 var JobSchema = new Schema({
-  title:'String',
   description: 'String',
   type: 'String',
   location:'String',
@@ -12,10 +11,12 @@ var JobSchema = new Schema({
   picture : 'String',
   url : 'String',
   email: 'String',
-  campany: 'String',
-  amount: 'Number',
+  company: 'String',
+  instruction: 'String',
   Category: 'String'
 });
+
+JobSchema.index({'$**': 'text'});
 
 
 

@@ -21,7 +21,7 @@ module.exports = function(app) {
     todoCategories.list_all_categories().then((objCategory) => {
       if(objCategory==null)
         res.json({ result:"Category Empty"});
-      res.json({objCategory});
+      res.json(objCategory);
     });
   });
 

@@ -5,6 +5,7 @@ mongoose = require('mongoose');
 
 
 bodyParser = require('body-parser');
+cors = require('cors');
 var morgan      = require('morgan');
 
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
@@ -23,6 +24,7 @@ var session = require('express-session');
 // use body parser so we can get info from POST and/or URL parameters
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 // use morgan to log requests to the console
 app.use(morgan('dev'));
@@ -30,7 +32,8 @@ app.use(morgan('dev'));
 //var connectMongoOnline='mongodb://Boxx:Boxx123456@@ds111430.mlab.com:11430/crypto';
 //mongodb://<dbuser>:<dbpassword>@ds113640.mlab.com:13640/crypto
 //mongodb://<dbuser>:<dbpassword>@ds111430.mlab.com:11430/crypto
-var connectMongoOnline='mongodb://leyloo:Sondley2318@ds259245.mlab.com:59245/sondley';
+var connectMongoOnline='mongodb://localhost:27017/sondley';
+// var connectMongoOnline='mongodb://leyloo:Sondley2318@ds259245.mlab.com:59245/sondley';
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect(connectMongoOnline);

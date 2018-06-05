@@ -135,16 +135,25 @@ exports.searchJobByCategory = function(req, res) {
   });*/
 
   var pageOptions = {
-      page: req.query.page || 0,
-      limit: req.query.limit || 25
+      page: req.body.page || 0,
+      limit: req.body.limit || 25
   }
 
-  Job.findOne({Category:req.body.Category})
+  let objQuery = { Category: req.body.Category };
+
+  if (req.body.q) {
+    objQuery['$text'] = { $search: req.body.q };
+  }
+
+  Job.find(objQuery)
     .skip(pageOptions.page*pageOptions.limit*1)
     .limit(pageOptions.limit*1)
     .exec(function (err, listJob) {
         if(err) { res.status(500).json(err); return; };
-        res.status(200).json(listJob);
+
+        Job.count(objQuery).exec(function (err, count) {
+          res.status(200).json({ data: listJob, total: count });
+        });
     })
 };
 

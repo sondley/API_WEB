@@ -5,6 +5,9 @@ const service = require('../services');
 const Token= require('../models/token');
 
 exports.createTokenLogin = function(user){
+	if (!user) {
+		return;
+	}
 	console.log(user);
 	const payload = {
 		sub: user._id,
